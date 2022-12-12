@@ -23,7 +23,6 @@ def is_presente(funz):
     def wrapper(*args, **kwargs):
         lista = args[0]
         presente = False
-        print("sono il parametro" + str(args[1]))
         for elemento in lista:
             if str(elemento.nome).lower() == str(args[1]).lower():
                 print("elemento con lo stesso nome trovato")

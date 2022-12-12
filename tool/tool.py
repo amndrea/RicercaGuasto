@@ -1,4 +1,6 @@
 import os
+import platform
+
 
 
 def create_path(nomefile):
@@ -9,7 +11,11 @@ def create_path(nomefile):
     """
     s = (os.path.realpath(__file__))
     i = len(s)
-    while s[i - 1] != '\\': i = i - 1
+    sistem = platform.system()
+    if sistem == "Linux":
+        while s[i - 1] != '/': i = i - 1
+    elif sistem == "Windows":
+        while s[i - 1] != '\\': i = i -1
     s = s[0:i]
     return s + nomefile
 
@@ -23,4 +29,4 @@ def create_directory(nomedir):
     i = len(s)
     while s[i-1] != '\\': i = i -1
     s = s[0:i]
-    if os.
+    
