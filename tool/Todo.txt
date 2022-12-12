@@ -1,0 +1,4 @@
+per stampare gli elemeenti di una lista
+
+for e in lista_g.Listaguasti:
+    print(e.turno)

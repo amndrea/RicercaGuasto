@@ -27,6 +27,19 @@ def create_directory(nomedir):
     """
     s = (os.path.realpath(__file__))
     i = len(s)
-    while s[i-1] != '\\': i = i -1
-    s = s[0:i]
+    sistem = platform.system()
+
+    if sistem == "Linux":
+            while s[i - 1] != '/': i = i - 1
+            s = s[0:i]
+            s = s+nomedir
+    s = s+nomedir
+
+    # Se la directory non esiste la creo
+    if not os.path.exists(s):
+        os.makedirs(s)
+
+    return s
+
+    
     
