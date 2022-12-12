@@ -17,23 +17,6 @@ class ListaGuasti:
 # ----------------------------------------------------------------------------------------- #
 
 # ----------------------------------------------------------------------------------------- #
-def check_attributi_guasto(data, turno, reparto, manutentore, descrizione_problema, risoluzione, isrisolto):
-    presenti = data and turno and reparto and manutentore and descrizione_problema and risoluzione
-    if not presenti:
-        print("Non ci sono tutti gli attributi")
-        return False
-    if turno.lower() not in ("mattina", "pomeriggio", "notte"):
-        print("Turno errato")
-        return False
-    if reparto.lower() not in ("mulini","presse", "smalterie","forni","squadrature", "scelte", "generale"):
-        print("reparto errato")
-        return False
-    if isrisolto not in ('0','1'):
-        print("risoluzione incompleta")
-        return False
-    return True
-
-
 def check_Decorator(funz):
     """metodo decoratore che controlla che ci siano tutti gli attributi di un guasto
     prima di aggiungerlo alla lista dei guasti
