@@ -19,3 +19,8 @@ def check_attributi_guasto(data, turno, reparto, manutentore, descrizione_proble
         print("risoluzione incompleta")
         return False
     return True
+
+/*************************************************/
+requisiti 
+pip install PySimpleGUI
+/*************************************************/
