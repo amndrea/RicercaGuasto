@@ -24,18 +24,25 @@ def check_Decorator(funz):
     args[1] = tupla contenente tutti i campi di un guasto"""
     def wrapper(*args, **kwargs):
         (data, turno, reparto, manutentore, descrizione_problema, risoluzione, is_risolto) = args[1]
-        if not data and turno and reparto and manutentore and descrizione_problema and risoluzione:
+
+        # controllo che ci siano tutti gli attributi
+        if not data and turno and reparto and manutentore and descrizione_problema and risoluzione and is_risolto:
             print("mancano degli attributi")
             return False
+        
+        # controllo la correttezza degli attributi 
         if turno.lower() not in ("mattina", "pomeriggio", "notte","m","p","n"):
             print("turno errato")
             return False
+
         if reparto.lower() not in ("mulini","presse", "smalterie","forni","squadrature", "scelte", "generale"):
             print("reparto errato")
             return False
-        if is_risolto not in ('0','1'):
+
+        if is_risolto not in ("si","no","forse"):
             print("risoluzione incompleta")
             return False
+
         # se arrivo qui vuol dire che tutti gli attributi inseriti sono per lo meno verosimili
         funz(*args, **kwargs)
     return wrapper
@@ -46,8 +53,6 @@ def AggiungiGuasto(L,par):
         guasto = Guasto(data,turno,reparto,manutentore,descrizione_problema,risoluzione,is_risolto)
         L.append(guasto)
 
-
-        
 
 def carica_lista_guasti(L):
     """Metodo che utilizzo per caricare la lista guasti da un file testale

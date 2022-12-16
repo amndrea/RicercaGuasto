@@ -62,7 +62,7 @@ def App( lista_m, lista_g):
                 if password == 'caporeparto':
                     print("faccio il login da caporeparto")
                 else:
-                    print("Ramon!!! hai sbagliato le credenziali")
+                    sg.Popup()
 
             # controllo che sia un account esistente 
             if lista_m.esistente(user,password):
