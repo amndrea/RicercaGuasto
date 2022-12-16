@@ -31,14 +31,14 @@ def create_directory(nomedir):
 
     if sistem == "Linux":
             while s[i - 1] != '/': i = i - 1
-            s = s[0:i]
-            s = s+nomedir
+    if sistem == "Windows":
+         while s[i - 1] != '\\': i = i - 1
+    s = s[0:i]
     s = s+nomedir
 
     # Se la directory non esiste la creo
     if not os.path.exists(s):
         os.makedirs(s)
-
     return s
 
     

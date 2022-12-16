@@ -24,3 +24,15 @@ def check_attributi_guasto(data, turno, reparto, manutentore, descrizione_proble
 requisiti 
 pip install PySimpleGUI
 /*************************************************/
+
+
+/*************************************************/
+ add(lista_m.Listamanutentori,"andrea","bonfatti")
+    add_g(lista_g.Listaguasti, ("11/10/2022","notte","presse","bonfi","non va un cazzo","spento e riacceso","1"))
+/*************************************************/
+    print(len(lista_m.Listamanutentori))
+    print(len(lista_g.Listaguasti))
+
+
+HO aggiunto il caporeparto come classe che eredita da manutentore, 
+devo definire i metodi della classe caporeparto

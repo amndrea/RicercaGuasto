@@ -56,7 +56,7 @@ def carica_lista_guasti(L):
     : param L: Lista di guasti da caricare
     : return: Lista di guasti letta dal file 
     """
-    nome_file = t.create_directory("Guasti")
+    nome_dir = t.create_directory("Guasti")
 
 
 # ----------------------------------------------------------------------------------------- #

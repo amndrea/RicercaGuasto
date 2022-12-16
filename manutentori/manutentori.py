@@ -6,9 +6,19 @@ class Manutentore:
         self.nome = nome
         self.password = password
 
+class Caporeparto(Manutentore):
+    def __init__(self, nome, password):
+        super().__init__("caporeparto", "caporeparto")
+
 class ListaManutentori:
     def __init__(self):
         self.Listamanutentori = []
+
+    def esistente (self, nome, password):
+        for ut in self.Listamanutentori:
+            if nome == ut.nome and password == ut.password:
+                return True
+        return False        
 # ----------------------------------------------------------------------------------------- #
 
 # ----------------------------------------------------------------------------------------- #
